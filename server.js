@@ -82,6 +82,8 @@ app.post('/classify/url', async (req, res) => {
             throw initialResponse.body.error;
         }
 
+
+        
         const poller = getLongRunningPoller(client, initialResponse);
         const analyzeResult = ((await poller.pollUntilDone()).body).analyzeResult;
 
